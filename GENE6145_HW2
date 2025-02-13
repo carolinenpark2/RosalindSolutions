@@ -9,5 +9,11 @@ def count_dna(s):
     return count_a, count_c, count_g, count_t
 
 count_dna(dna)
-#RNA
 
+#RNA
+dna = 'GATGGAACTTGACTACGTAAATT'
+
+def transcribe_dna(t):
+    return t.replace('T', 'U')
+
+transcribe_dna(dna)
