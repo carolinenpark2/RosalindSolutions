@@ -17,3 +17,15 @@ def transcribe_dna(t):
     return t.replace('T', 'U')
 
 transcribe_dna(dna)
+
+#REVC
+dna = 'AAAACCCGGT'
+
+def reverse_complement(s):
+    complement = {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}
+    reverse_complement = ''
+    for base in s[::-1]:
+        reverse_complement += complement[base]
+    return reverse_complement
+
+reverse_complement(dna)
