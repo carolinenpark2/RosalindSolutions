@@ -47,3 +47,18 @@ def gc_content(s):
     percent = (total / len(i)) * 100
   
 gc_content(data)
+
+
+#HAMM
+
+string_1= 'GAGCCTACTAACGGGAT'
+string_2 = 'CATCGTAATGACGGCCT'
+
+def hamming(s, t):
+    count = 0
+    for i in range(len(s)):
+        if s[i] != t[i]:
+            count += 1
+    return count
+
+hamming(string_1, string_2)
