@@ -29,3 +29,21 @@ def reverse_complement(s):
     return reverse_complement
 
 reverse_complement(dna)
+
+#GC
+data = '>Rosalind_6404CCTGCGGAAGATCGGCACTAGAATAGCCAGAACCGTTTCTCTGAGGCTTCCGGCCTTCCCTCCCACTAATAATTCTGAGG>Rosalind_5959CCATCGGTAGCGCATCCTTAGTCCAATTAAGTCCCTATCCAGGCGCTCCGCCGAAGGTCTATATCCATTTGTCAGCAGACACGC\
+>Rosalind_0808\
+CCACCCTCGTGGTATGGCTAGGCATTCAGGAACCGGAGAACGCTTCAGACCAGCCCGGAC\
+TGGGAACCTGCGGGCAGTAGGTGGAAT'
+
+def gc_content(s):
+  for i in s:
+    if i.startswith('>'):
+      print(i[1:])
+  else:
+    count_c = i.count('C')
+    count_g = i.count('G')
+    total = count_c + count_g
+    percent = (total / len(i)) * 100
+  
+gc_content(data)
