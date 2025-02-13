@@ -62,3 +62,49 @@ def hamming(s, t):
     return count
 
 hamming(string_1, string_2)
+
+
+#PROT
+
+rna_codon = {
+    "UUU": "F", "UUC": "F",  # Phenylalanine
+    "UUA": "L", "UUG": "L",  # Leucine
+    "CUU": "L", "CUC": "L", "CUA": "L", "CUG": "L",  # Leucine
+    "AUU": "I", "AUC": "I", "AUA": "I",  # Isoleucine
+    "AUG": "M",  # Methionine (Start codon)
+    "GUU": "V", "GUC": "V", "GUA": "V", "GUG": "V",  # Valine
+    "UCU": "S", "UCC": "S", "UCA": "S", "UCG": "S",  # Serine
+    "CCU": "P", "CCC": "P", "CCA": "P", "CCG": "P",  # Proline
+    "ACU": "T", "ACC": "T", "ACA": "T", "ACG": "T",  # Threonine
+    "GCU": "A", "GCC": "A", "GCA": "A", "GCG": "A",  # Alanine
+    "UAU": "Y", "UAC": "Y",  # Tyrosine
+    "UAA": "Stop", "UAG": "Stop", "UGA": "Stop",  # Stop codons
+    "CAU": "H", "CAC": "H",  # Histidine
+    "CAA": "Q", "CAG": "Q",  # Glutamine
+    "AAU": "N", "AAC": "N",  # Asparagine
+    "AAA": "K", "AAG": "K",  # Lysine
+    "GAU": "D", "GAC": "D",  # Aspartic acid
+    "GAA": "E", "GAG": "E",  # Glutamic acid
+    "UGU": "C", "UGC": "C",  # Cysteine
+    "UGG": "W",  # Tryptophan
+    "CGU": "R", "CGC": "R", "CGA": "R", "CGG": "R",  # Arginine
+    "AGU": "S", "AGC": "S",  # Serine
+    "AGA": "R", "AGG": "R",  # Arginine
+    "GGU": "G", "GGC": "G", "GGA": "G", "GGG": "G"  # Glycine
+}
+
+
+
+
+rna='AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA'
+
+def protein(s):
+    protein = ''
+    for i in range(0, len(s), 3):
+        codon = s[i:i+3]
+        if codon in codon:
+            protein += rna_codon[codon]
+        else:
+            break
+    return protein
+protein(rna)
