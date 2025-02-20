@@ -1,10 +1,21 @@
 #SUBS
+string = 'GATATATGCATATACTT'
+substring = 'ATAT'
+
+def loc_substring(s, t):
+    locations = []
+    for i in range(len(s)):
+        if s[i:i+len(t)] == t:
+            locations.append(i+1)
+    return locations
+
+loc_substring(string, substring)
 
 #PRTM
 
 #SPLC
 
-#REVC
+#REVP
 
 #TRAN
 
