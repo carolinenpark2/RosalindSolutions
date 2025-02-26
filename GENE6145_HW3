@@ -90,6 +90,26 @@ rev_pal(data)
 
 #TRAN
 
+transition = [('A','G'), ('T','C'), ('C','T'), ('G','A')]
+transversion = [('A','T'), ('A','C'), ('T','A'),('T','G'),('C','A'), ('C','G'), ('G', 'T'), ('G','C')] 
+
+string1 = 'GCAACGCACAACGAAAACCCTTAGGGACTGGATTATTTCGTGATCGTTGTAGTTATTGGA\
+AGTACGGGCATCAACCCAGTT'
+string2 ='TTATCTGACAAAGAAAGCCGTCAACGGCTGGATAATTTCGCGATCGTGCTGGTTACTGGC\
+GGTACGAGTGTTCCTTTGGGT'
+
+def tran(s1, s2):
+  transition_count = 0
+  transversion_count = 0
+  for i in range(len(s1)):
+    if (s1[i], s2[i]) in transition:
+      transition_count += 1
+    elif (s1[i], s2[i]) in transversion:
+      transversion_count += 1
+  return transition_count/transversion_count
+ 
+tran(string1,string2)
+
 #LCSM
 
 #ORF
