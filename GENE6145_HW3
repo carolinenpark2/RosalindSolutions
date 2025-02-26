@@ -112,4 +112,18 @@ tran(string1,string2)
 
 #LCSM
 
+data = ['GATTACA','TAGACCA','ATACA']
+
+def motif(strings):
+  seq1 = strings[0]
+  other = strings[1:]
+  motif =[]
+  for i in range(len(seq1)):
+    for n in range(len(seq1)):
+      if all(seq1[i:i+n] in string for string in other):
+        motif.append(seq1[i:i+n])
+  return max(motif, key=len)
+      
+motif(data)
+
 #ORF
