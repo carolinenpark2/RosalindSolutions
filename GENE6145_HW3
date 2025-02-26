@@ -70,6 +70,24 @@ splice(data, seq)
 
 #REVP
 
+def rev_comp(string):
+  complement = {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}
+  string = string.strip()
+  reverse_complement = ''.join([complement.get(base, '') for base in string[::-1]])
+  return reverse_complement
+
+data = 'TCAATGCATGCGGGTCTATATGCAT'
+
+def rev_pal(dna):
+  low = 4
+  high = 12
+  for i in range(len(dna)-low):
+    for n in range(low, high):
+      if dna[i:i+n] == rev_comp(dna[i:i+n]) and len(dna[i:i+n])==n:
+        print(i+1, n)
+
+rev_pal(data)
+
 #TRAN
 
 #LCSM
